@@ -1,0 +1,25 @@
+application:
+  jwt:
+    expiration: 3600000
+    secret: "SMvvm1dgVZgom5AMG5JI1uzgBUSP5TtsyJnQS2vh3tk"
+
+spring:
+  jpa:
+    properties:
+      hibernate:
+        physical_naming_strategy: org.hibernate.boot.model.naming.CamelCaseToUnderscoresNamingStrategy
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  datasource:
+    url: jdbc:postgresql://localhost:5432/dev
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+  flyway:
+    enabled: true
+    validateMigrationNaming: true
+    locations: classpath:sql-init
+  data:
+    redis:
+      host: ${REDIS_HOST:localhost}
+      port: ${REDIS_PORT:6379}
+      password: ${REDIS_PASSWORD:}

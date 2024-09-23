@@ -1,0 +1,16 @@
+application:
+  jwt:
+    secret: "SMvvm1dgVZgom5AMG5JI1uzgBUSP5TtsyJnQS2vh3tk"
+    expiration: 600000
+
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+  flyway:
+    enabled: false
+    validateMigrationNaming: true
+    locations: classpath:sql-init
+
+logging:
+  level:
+    com.mpusinhol.rockpaperscissors: DEBUG
